@@ -8,4 +8,5 @@ Name: <input type="text" name="name1"></input>
 </form>
 <form name="f2" action="select.php" method="post">
 <input type="submit" name="submit" value="Log data"></input>
+
 </html>
