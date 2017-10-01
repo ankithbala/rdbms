@@ -1,5 +1,5 @@
 # rdbms project-NITTE STATIONARY
-database
+
 f1.php is home page
 index.php is backend script to receive data from f1.php and sends to database
 select.php is used to retirve last entered values.
