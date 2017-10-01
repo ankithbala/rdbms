@@ -1,4 +1,4 @@
-# rdbms
+# rdbms project
 database
 f1.php is home page
 index.php is backend script to receive data from f1.php and sends to database
