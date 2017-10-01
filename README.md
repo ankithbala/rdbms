@@ -1,4 +1,4 @@
-# rdbms project
+# rdbms project-NITTE STATIONARY
 database
 f1.php is home page
 index.php is backend script to receive data from f1.php and sends to database
@@ -8,3 +8,4 @@ sql language:sqlsrv(for windows)
 
 1)click on submit to insert values into database
 2)click log to retrive values(select command).
+
