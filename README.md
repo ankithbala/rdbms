@@ -7,4 +7,4 @@ select.php is used to retirve last entered values.
 sql language:sqlsrv(for windows)
 
 1)click on submit to insert values into database
-2)click in log to retrive values(select command).
+2)click log to retrive values(select command).
