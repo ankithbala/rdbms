@@ -125,7 +125,7 @@ Name: <input type="text" name="name1"></input>
 </div>
             Item ID
             <input type="text" id="itemid">
-           <input type="button" value="Add to Cart" onClick="addItem(document.getElementById('itemid').value)"></div>            
+           <input type="button" value="Add to Cart" onClick="addItem(document.getElementById('sel1').value)"></div>            
   <table class="one" cellpadding=3 cellspacing=4 id="items">
 
 <tr><br>
