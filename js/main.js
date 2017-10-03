@@ -54,20 +54,14 @@ function addItem(id)
         cells.push(row.insertCell(-1));
     cells[0].innerHTML=id;
     cells[1].innerHTML=itemdb[id].name;
-    cells[2].innerHTML="<input type='number' value="+itemdb[id].value+" min=1 name='value"+size+"' id='val"+size+"'>" ;
-cells[3].innerHTML="<input type='number' value=1 min=1 name='amount"+size+"' id='amnt"+size+"' oninput='refreshPrice()'>";    
+    cells[2].innerHTML="<input type='number' value="+itemdb[id].value+" min=1 name='value' id='val"+size+"'>" ;
+cells[3].innerHTML="<input type='number' value=1 min=1 name='amount' id='amnt"+size+"' oninput='refreshPrice()'>";    
     
-
-//cells[4].innerHTML=itemdb[id].value;
-
-
 
 tablecontents[id]={quantity:document.getElementById("amnt"+size+""),price:cells[4]};
 
 
     size++;
-
-	document.getElementById("max").value=size;
     refreshPrice();
 }
 
