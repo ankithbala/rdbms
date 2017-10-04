@@ -46,6 +46,59 @@
       .row.content {height:auto;} 
     }
   </style>
+
+
+
+
+<script>
+function showStat(item) {
+  if (item=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  } 
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","getStat.php?i="+item,true);
+  xmlhttp.send();
+}
+
+
+function insert(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  } 
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","insertStat.php?qty="+str,true);
+  xmlhttp.send();
+}
+
+
+
+
+
+</script>
+
+
 </head>
 <body>
 
@@ -178,7 +231,7 @@ function insert(str) {
 </head>
 <body>
 <form>
- <select name="sname" id="sel1" onchange="showStat(this.value)">
+ <select name="sname" id="select1" onchange="showStat(this.value)">
         <option value="">Select:</option>
         <option value="1">A</option>
         <option value="2">B</option>
@@ -230,12 +283,12 @@ function insert(str) {
   
       <div>
 <div class="form-group">
-      <label for="sel1">Select list (select one):</label>
-      <select class="form-control" name="sname" id="sel1">
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
-        <option>D</option>
+            <select class="form-control" id="sell1" onchange="showStat(this.value)">
+        <option value="">Select:</option>
+        <option value="1">Pen</option>
+        <option value="2">Pencil</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
       </select>
 </div>
 
@@ -245,8 +298,8 @@ function insert(str) {
 
             Item ID
             <input type="text" name="iname" id="itemid">
-           <input type="button" value="Add to Cart" onClick="addItem(document.getElementById('sel1').value)"></div>            
-  <table class="one" cellpadding=3 cellspacing=4 id="items">
+           <input type="button" value="Add to Cart" onClick="addItem(document.getElementById('sell1').value)"></div>            
+  <table class="one" cellpadding=3 cellspacing=4 id="items" onchange="insert(this.value)">
 
 <tr><br>
                     <th>ID</th>
@@ -289,5 +342,6 @@ Grand Total : <input type="number" id="grandtotal" disabled>
 
 </body>
 </html>
+
 
 

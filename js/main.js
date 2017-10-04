@@ -1,15 +1,15 @@
 
 var itemdb=
 {
-    "A":{name:"ca-Cola", value: 28},
-    "B":{name:"Tea", value: 15},
-    "C":{name:"Coffee", value: 15},
-"D":{name:"Paneer", value: 30},
-"E":{name:"Naan", value: 60},
-"F":{name:"Gobi", value: 50},
-"G":{name:"Pina", value: 30},
-"H":{name:"Sizz", value: 30},
-"I":{name:"Dessert", value: 30}
+    "1":{name:"ca-Cola", value: 28},
+    "2":{name:"Tea", value: 15},
+    "3":{name:"Coffee", value: 15},
+"4":{name:"Paneer", value: 30},
+"5":{name:"Naan", value: 60},
+"6":{name:"Gobi", value: 50},
+"7":{name:"Pina", value: 30},
+"8":{name:"Sizz", value: 30},
+"9":{name:"Dessert", value: 30}
 };
 
 var grandtotal=document.getElementById("grandtotal");

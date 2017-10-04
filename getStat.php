@@ -3,8 +3,11 @@
 <body>
 
 <?php
+session_start();
+
 $q = intval($_GET['i']);
 
+$_SESSION['ha'] = $q;
 
 
 

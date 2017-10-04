@@ -19,6 +19,12 @@ th {text-align: left;}
 <body>
 
 <?php
+session_start();
+
+$z=$_SESSION['ha'];
+echo $z;
+
+
 $a = intval($_GET['qty']);
 
 echo "$a";
@@ -55,7 +61,7 @@ if( $conn ) {
 
 $sql = "UPDATE stat SET qty = ? WHERE item = ?";
 
-$params = array($a, 2);
+$params = array($a, $z);
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
 
@@ -69,7 +75,7 @@ if( $rows_affected === false) {
 }
 
 
-$sql1="SELECT * FROM stat where item=2";
+$sql1="SELECT * FROM stat where item=$z";
 $rs=sqlsrv_query( $conn , $sql1);
 
 
