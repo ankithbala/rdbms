@@ -1,4 +1,3 @@
-
 var itemdb=
 {
     "1":{name:"ca-Cola", value: 28},
@@ -17,7 +16,6 @@ var grandtotal=document.getElementById("grandtotal");
 var tablecontents={};
 
 var size=0;
-
 
 function refreshPrice()
 {
@@ -47,11 +45,21 @@ function addItem(id)
         refreshPrice();
         return;
     }
-    var table=document.getElementById("items");
-    var row=table.insertRow(-1);
+    var hello=document.getElementById("items");
+    var row=hello.insertRow(-1);
     var cells=[];
-    for (var i=0;i<6;i++)
+         for (var i=0;i<6;i++)
+     {
         cells.push(row.insertCell(-1));
+        
+
+      }
+
+
+
+
+
+
     cells[0].innerHTML=id;
     cells[1].innerHTML=itemdb[id].name;
     cells[2].innerHTML="<input type='number' value="+itemdb[id].value+" min=1 name='value' id='val"+size+"'>" ;
@@ -63,5 +71,6 @@ tablecontents[id]={quantity:document.getElementById("amnt"+size+""),price:cells[
 
     size++;
     refreshPrice();
+
 }
 

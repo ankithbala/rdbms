@@ -9,7 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/main.js"></script>
 <link href="css/main.css" rel="stylesheet">
 
   <script src="js/bootstrap.min.js"></script>
@@ -47,7 +46,7 @@
     }
   </style>
 
-
+<script src="js/main.js"></script>
 
 
 <script>
@@ -96,8 +95,25 @@ function insert(str) {
 
 
 
-</script>
 
+function combo2()
+              {
+              
+                           url="wrong1.php?data=1";
+          
+                                           if(window.XMLHttpRequest)
+      request = new XMLHttpRequest();
+ else
+    request = new ActiveXObject("Microsoft.XMLHTTP");
+    request.open('GET', url, false);
+    request.send();
+              
+              }
+
+
+
+
+</script>
 
 </head>
 <body>
@@ -164,7 +180,7 @@ Name: <input type="text" name="name1"></input>
 </form>
 <h3> <marquee direction="right">Please Select Your Items</marquee><h3>
        
-<form name="f4" action="f4.php" method="post">
+<form name="f4" onsubmit="combo2()">
   
 
 
@@ -177,7 +193,7 @@ Name: <input type="text" name="name1"></input>
 
 
 
-
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -227,6 +243,13 @@ function insert(str) {
 
 
 
+
+
+
+
+
+
+
 </script>
 </head>
 <body>
@@ -252,6 +275,7 @@ function insert(str) {
 
 </body>
 </html>
+-->
 
 
 
@@ -279,8 +303,8 @@ function insert(str) {
 
 
 
+  <div id="txtHint"><b></b></div>
 
-  
       <div>
 <div class="form-group">
             <select class="form-control" id="sell1" onchange="showStat(this.value)">
@@ -291,16 +315,13 @@ function insert(str) {
         <option value="4">4</option>
       </select>
 </div>
-
-
-
-
-
-            Item ID
-            <input type="text" name="iname" id="itemid">
-           <input type="button" value="Add to Cart" onClick="addItem(document.getElementById('sell1').value)"></div>            
-  <table class="one" cellpadding=3 cellspacing=4 id="items" onchange="insert(this.value)">
-
+Quantity:<input type="number" onchange="insert(this.value)">
+ <input type="button" value="Add to Cart" onClick="addItem(document.getElementById('sell1').value)" ></div>            
+  <table class="one" cellpadding=3 cellspacing=4 id="items">
+	
+	
+   
+	
 <tr><br>
                     <th>ID</th>
                     <th>Description</th>
@@ -314,13 +335,38 @@ function insert(str) {
 <br>
  </div>
 
-
 Grand Total : <input type="number" id="grandtotal" disabled>
-<input type="submit" name="total" value="Checkout"></td>
+<input type="submit" name="total" value="Checkout" onClick="combo2()">
 </form>
+ <select class="form-control" id="itemSelection" onchange="">
+        <option value="">Select:</option>
+        <option value="1">Pen</option>
+        <option value="2">Pencil</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <button id="addButton" onClick="addButtonPressed()">
+        Add
+    </button>
+    
+    <table id="itemTable" border=1>
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Value</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        
+    </table>
+    <input type="text" id="grandTotal"></input>
+    <button onclick="ajx()">
+        Submit
+    </button>
 
-
-
+<p id="demo"></p>
+	
+	
 </div>
     </div>
 
@@ -339,7 +385,8 @@ Grand Total : <input type="number" id="grandtotal" disabled>
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
-
+<script src="jquery-3.2.1.js"></script>
+    <script src="js/test.js"></script>
 </body>
 </html>
 
